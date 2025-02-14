@@ -1,0 +1,129 @@
+\documentclass[11pt]{article}
+\usepackage{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{tocloft}
+
+\geometry{letterpaper, margin=1in}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    pdftitle={Portfolio Allocation and Risk Analysis},
+    pdfpagemode=FullScreen,
+}
+
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+% Title page information
+\title{\vspace*{3cm}\centering FIN 310 (46871)\\[0.5em] Tuong Thuc Le\\[0.5em] UIC Class '27, BS. Finance + Maths\\[1em] \textit{How The Market Works} Project}
+\author{}
+\date{\vspace*{2cm} \today}
+
+\begin{document}
+
+% Title Page
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+% Table of Contents
+\tableofcontents
+\newpage
+
+% Abstract in a Box
+\section*{Abstract}
+This research explores optimal portfolio allocation strategies using a diversified asset universe. Historical market data from January 2020 to present was used to compute risk-return metrics and rank assets based on their Return-to-Risk Ratio. A portfolio of \$500,000 was allocated under the constraints of a maximum 20\% per asset and a minimum of 10 distinct assets. A Monte Carlo simulation over a 45-day trading horizon (February 16, 2025 to April 18, 2025) with 30,000 iterations produced a mean portfolio value of \$523,339.35, a standard deviation of \$20,498.36, and a mean portfolio change of \$23,236.82 (+4.65\%). The analysis also indicates that screening only 100 assets is limited; a broader asset universe may enhance portfolio performance.
+
+\section{Introduction}
+Constructing a robust investment portfolio in today’s dynamic market requires a delicate balance between risk and return. This study presents a systematic approach to portfolio allocation using historical data, risk-return metrics, and Monte Carlo simulation. Assets were ranked according to their Return-to-Risk Ratio, and a portfolio of \$500,000 was constructed under the constraints of a maximum 20\% per asset and a minimum of 10 distinct assets. Notably, the screening process in this study was limited to 100 assets; future research should expand this universe to capture a wider range of market opportunities.
+
+\section{Methodology}
+\subsection{Data Collection and Risk-Return Metrics}
+Historical data from January 2020 to the present was obtained from Yahoo Finance for 100 assets (50 stocks and 50 ETFs). Daily returns were computed from adjusted closing prices. Annualized return and volatility were estimated using:
+\begin{align*}
+\text{Annual Return} &= \text{Mean Daily Return} \times 252,\\[1ex]
+\text{Annual Volatility} &= \text{Daily Volatility} \times \sqrt{252}.
+\end{align*}
+The Return-to-Risk Ratio was defined as:
+\[
+\text{Return-to-Risk Ratio} = \frac{\text{Annual Return}}{\text{Annual Volatility}}.
+\]
+Assets were ranked based on this metric.
+
+\subsection{Portfolio Allocation}
+A portfolio of \$500,000 was constructed under the following constraints:
+\begin{itemize}
+    \item Maximum 20\% allocation per asset (i.e., \$100,000 per asset).
+    \item A minimum of 10 distinct assets.
+\end{itemize}
+The top 10 assets (by Return-to-Risk Ratio) were initially allocated an equal amount (\$50,000 each). Remaining capital was then allocated round-robin across these assets without exceeding the per-asset maximum.
+
+\subsection{Monte Carlo Simulation}
+A Monte Carlo simulation with 30,000 iterations was performed to evaluate portfolio performance over a 45-trading-day horizon (from February 16, 2025 to April 18, 2025). The simulation used a Geometric Brownian Motion (GBM) model:
+\[
+S_T = S_0 \exp\left[\left(\mu - \frac{1}{2}\sigma^2\right)T + \sigma \sqrt{T}\, Z\right],
+\]
+where $S_0$ is the current price, $\mu$ is the daily mean return, $\sigma$ is the daily volatility, $T$ is the number of trading days, and $Z$ is a standard normal variable. The final portfolio value was computed as the sum over all assets (shares multiplied by the simulated final price).
+
+\section{Results and Discussion}
+Key findings from the analysis include:
+\begin{itemize}
+    \item \textbf{Asset Ranking:} The 100 assets were ranked by their Return-to-Risk Ratio. Top-ranked assets included COST, WMT, AAPL, among others.
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{image_1.png}
+    \caption{Scatter plot of the 100 US Equities/Assets }
+    \label{fig:scatter plot}
+\end{figure}
+
+    \item \textbf{Portfolio Allocation:} A portfolio of \$500,000 was allocated equally across the top 10 assets with additional capital allocated until nearly exhausted (remaining capital: \$16.68).
+    \begin{table}[H]
+    \centering
+    \caption{Optimized Portfolio Allocations (Top 10 Assets with Maximum Allocation per Asset)}
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        \textbf{Symbol} & \textbf{Price (\$)} & \textbf{Shares} & \textbf{Cost (\$)} & \textbf{Return-to-Risk Ratio} & \textbf{Weight} \\ 
+        \hline
+        COST  & 1076.86  & 92  & 99,071.12  & 1.2561  & 19.81\%  \\
+        WMT   & 105.05   & 136 & 14,286.80  & 1.0279  & 2.86\%   \\
+        AAPL  & 241.53   & 136 & 32,848.08  & 0.9015  & 6.57\%   \\
+        GLD   & 270.31   & 136 & 36,762.16  & 0.8759  & 7.35\%   \\
+        IYW   & 165.00   & 136 & 22,440.00  & 0.8597  & 4.49\%   \\
+        QQQ   & 535.90   & 136 & 72,882.40  & 0.8493  & 14.58\%  \\
+        GS    & 648.95   & 136 & 88,257.20  & 0.8429  & 17.65\%  \\
+        GE    & 208.36   & 136 & 28,336.96  & 0.8344  & 5.67\%   \\
+        VGT   & 636.95   & 136 & 86,625.20  & 0.8258  & 17.33\%  \\
+        MS    & 136.84   & 135 & 18,473.40  & 0.8027  & 3.69\%   \\
+        \hline
+    \end{tabular}
+    \label{tab:optimized_portfolio}
+\end{table}
+
+    \item \textbf{Monte Carlo Simulation:} Over the 45-day horizon, 30,000 simulations produced a mean portfolio value of \$523,339.35 and a standard deviation of \$20,498.36. The mean portfolio change was \$23,236.82, corresponding to a 4.65\% increase.
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{image_2.png}
+    \caption{Histogram of Monte Carlo Simulated Portfolio Values}
+    \label{fig:monte_carlo}
+\end{figure}
+
+    \item \textbf{Risk Analysis:} The portfolio risk was assessed using historical covariance data, providing an annualized standard deviation measure.
+    \item \textbf{Limitations:} Screening only 100 assets proved to be a limiting factor. Expanding the asset universe could further improve the screening process and enhance portfolio performance.
+\end{itemize}
+
+\section{Conclusion}
+This study demonstrates a systematic approach to portfolio allocation and risk management. By leveraging historical data and risk-return metrics, an optimized portfolio was constructed with well-defined capital constraints. The Monte Carlo simulation provided a quantitative assessment of expected portfolio performance, suggesting a moderate gain of approximately 4.65\% over the simulated time horizon. Future research should expand the asset universe and consider dynamic rebalancing to further enhance portfolio outcomes.
+
+\clearpage
+\section*{References}
+[1] Harper, D. R. (2024, August 27). \textit{How to use Monte Carlo Simulation with GBM}. Investopedia. Retrieved from \url{https://www.investopedia.com/articles/07/montecarlo.asp}
+
+[2] Hayes, A. (2024, May 28). \textit{Portfolio Variance: definition, formula, calculation, and example}. Investopedia. Retrieved from \url{https://www.investopedia.com/terms/p/portfolio-variance.asp}
+
+\end{document}
