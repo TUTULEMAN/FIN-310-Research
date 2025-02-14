@@ -22,9 +22,9 @@ This repository contains the research paper, data analysis, and Monte Carlo simu
    - Run each cell sequentially to reproduce data retrieval, portfolio allocation, and Monte Carlo simulations.
 
 ## **Results Summary**
-- **Portfolio Performance:** Mean simulated portfolio value: **\$523,339.35**  
-- **Risk Assessment:** Portfolio standard deviation: **\$20,498.36**  
-- **Final Portfolio Allocation:** Seen in **`Research Paper.pdf`** section 4.
+- **Portfolio Performance:** Mean simulated portfolio value: **\$521,868.6**  
+- **Risk Assessment:** Portfolio standard deviation: **\$24,729.73 (4.96%)**  
+- **Final Portfolio Allocation:** Seen in **`Research Paper.pdf`** section 3, Table 1.
 
 ## **Acknowledgments**
 This research was conducted as part of **FIN 310 (46871), UIC Class '27, BS. Finance + Maths**, under the **"How The Market Works"** project for **Egemen Genc's** class.
