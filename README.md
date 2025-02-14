@@ -24,7 +24,7 @@ This repository contains the research paper, data analysis, and Monte Carlo simu
 ## **Results Summary**
 - **Portfolio Performance:** Mean simulated portfolio value: **\$523,339.35**  
 - **Risk Assessment:** Portfolio standard deviation: **\$20,498.36**  
-- **Suggested Improvement:** Expand asset universe beyond 100 stocks/ETFs for better risk-adjusted returns.
+- **Final Portfolio Allocation:** Seen in **`Research Paper.pdf`** section 4.
 
 ## **Acknowledgments**
 This research was conducted as part of **FIN 310 (46871), UIC Class '27, BS. Finance + Maths**, under the **"How The Market Works"** project for **Egemen Genc's** class.
