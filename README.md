@@ -5,16 +5,15 @@ This repository contains the research paper, data analysis, and Monte Carlo simu
 
 ## **Repository Structure**
 - **`latexraw.tex`** – The LaTeX source file for the research paper, containing all findings, methodology, and results.
-- **`analysis.ipynb`** – The Jupyter Notebook containing all data analysis, risk-return calculations, portfolio allocation, and Monte Carlo simulations.
-- **`references.bib`** (if applicable) – A bibliography file for citation management in LaTeX.
-- **`figures/`** – A directory containing images and visualizations used in the research paper.
+- **`JupterNotebokDisplay.ipynb`** – The Jupyter Notebook containing all data analysis, risk-return calculations, portfolio allocation, and Monte Carlo simulations.
+- **`Research Paper.pdf`** – The "real sauce" that shows all of my findings in a research-paper-based presentation. **`latexraw.tex`** is what makes up this file.
 
 ## **How to Use**
 1. **Research Paper (`latexraw.tex`)**  
    - Open this file in Overleaf or a LaTeX editor to compile the final report.
    - Ensure all figures and references are properly linked before compiling.
 
-2. **Data Analysis (`analysis.ipynb`)**  
+2. **Data Analysis (`JupterNotebokDisplay.ipynb`)**  
    - Open the Jupyter Notebook in **Jupyter Lab** or **Google Colab**.
    - Install necessary dependencies using:
      ```bash
@@ -28,9 +27,5 @@ This repository contains the research paper, data analysis, and Monte Carlo simu
 - **Suggested Improvement:** Expand asset universe beyond 100 stocks/ETFs for better risk-adjusted returns.
 
 ## **Acknowledgments**
-This research was conducted as part of **FIN 310 (46871), UIC Class '27, BS. Finance + Maths**, under the **"How The Market Works"** project.
-
----
-
-This README provides a structured guide to navigating and using the repository efficiently. Let me know if you need any refinements! 🚀
+This research was conducted as part of **FIN 310 (46871), UIC Class '27, BS. Finance + Maths**, under the **"How The Market Works"** project for **Egemen Genc's** class.
 
